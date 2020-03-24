@@ -18,7 +18,8 @@
 		"test": "jest test/index.test.ts",
 		"build": "rm -rf dist && tsc",
 		"release": "run build && standard-version",
-		"prepack": "run build"
+		"prepack": "run build",
+		"install:csb": "yarn install"
 	},
 	"devDependencies": {
 		"@types/babel__core": "^7.1.2",
