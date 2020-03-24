@@ -139,7 +139,7 @@ function plugin(
 							babelTypes.isMemberExpression(node.expression.left) &&
 							babelTypes.isIdentifier(node.expression.left.property, { name: 'propTypes' })
 						) {
-							originalPropTypesPath = nodePath;
+							originalPropTypesPath = nodePath as babel.NodePath;
 
 							if (babelTypes.isObjectExpression(node.expression.right)) {
 								const { code } = state.file;
@@ -195,9 +195,9 @@ function plugin(
 					nodeName: node.id.name,
 					usedProps:
 						babelTypes.isIdentifier(prop) || babelTypes.isObjectPattern(prop)
-							? getUsedProps(path, prop)
+							? getUsedProps(path as babel.NodePath, prop)
 							: [],
-					path,
+					path: path as babel.NodePath,
 					props,
 				});
 			},
@@ -239,7 +239,7 @@ function plugin(
 						path: path.parentPath,
 						usedProps:
 							babelTypes.isIdentifier(prop) || babelTypes.isObjectPattern(prop)
-								? getUsedProps(path, prop)
+								? getUsedProps(path as babel.NodePath, prop)
 								: [],
 						props: props!,
 						nodeName,
@@ -267,8 +267,8 @@ function plugin(
 
 				injectPropTypes({
 					nodeName,
-					usedProps: getUsedProps(path, undefined),
-					path,
+					usedProps: getUsedProps(path as babel.NodePath, undefined),
+					path: path as babel.NodePath,
 					props,
 				});
 			},
