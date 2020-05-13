@@ -1,0 +1,41 @@
+{
+	"type": "ProgramNode",
+	"body": [
+		{
+			"type": "ComponentNode",
+			"name": "ButtonBase",
+			"types": [
+				{
+					"type": "PropTypeNode",
+					"name": "variant",
+					"propType": {
+						"type": "UnionNode",
+						"types": [{ "type": "UndefinedNode" }, { "type": "StringNode" }]
+					},
+					"filenames": {},
+					"id": 1286
+				},
+				{
+					"type": "PropTypeNode",
+					"name": "component",
+					"propType": {
+						"type": "UnionNode",
+						"types": [{ "type": "LiteralNode", "value": "\"div\"" }, { "type": "UndefinedNode" }]
+					},
+					"filenames": {},
+					"id": 1289
+				},
+				{
+					"type": "PropTypeNode",
+					"name": "href",
+					"propType": {
+						"type": "UnionNode",
+						"types": [{ "type": "StringNode" }, { "type": "UndefinedNode" }]
+					},
+					"filenames": {},
+					"id": 1292
+				}
+			]
+		}
+	]
+}
